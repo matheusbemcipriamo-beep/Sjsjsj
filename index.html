@@ -2,10 +2,39 @@
      <html>
      <head>
          <title>Monitoramento Remoto</title>
+         <style>
+             body {
+                 font-family: Arial, sans-serif;
+                 text-align: center;
+                 margin-top: 50px;
+             }
+             img {
+                 max-width: 100%;
+                 height: auto;
+                 margin: 20px 0;
+             }
+             button {
+                 padding: 10px 20px;
+                 font-size: 16px;
+                 cursor: pointer;
+             }
+         </style>
      </head>
      <body>
          <h1>Monitoramento Remoto</h1>
-         <img src="http://localhost:5000/screenshot" alt="Captura de Tela">
-         <img src="http://localhost:5000/camera" alt="Câmera">
+         <img id="screenshot" src="http://localhost:5000/screenshot" alt="Captura de Tela">
+         <button onclick="updateScreenshot()">Atualizar Captura de Tela</button>
+         <img id="camera" src="http://localhost:5000/camera" alt="Câmera">
+         <button onclick="updateCamera()">Atualizar Câmera</button>
+
+         <script>
+             function updateScreenshot() {
+                 document.getElementById('screenshot').src = 'http://localhost:5000/screenshot?' + new Date().getTime();
+             }
+
+             function updateCamera() {
+                 document.getElementById('camera').src = 'http://localhost:5000/camera?' + new Date().getTime();
+             }
+         </script>
      </body>
      </html>
