@@ -30,19 +30,9 @@
         <img id="screenshot" src="http://localhost:5000/screenshot" alt="Captura de Tela">
     </div>
 
-    <div>
-        <button onclick="updateCamera()">Atualizar Câmera</button>
-        <br>
-        <img id="camera" src="http://localhost:5000/camera" alt="Câmera">
-    </div>
-
     <script>
         function updateScreenshot() {
             document.getElementById('screenshot').src = 'http://localhost:5000/screenshot?' + new Date().getTime();
-        }
-
-        function updateCamera() {
-            document.getElementById('camera').src = 'http://localhost:5000/camera?' + new Date().getTime();
         }
     </script>
 </body>
